@@ -1,19 +1,15 @@
 
-const Episode = ({name, onEpisodeClicked}) => {
+const Episode = ({episode, onEpisodeClicked}) => {
 
     const handleClick = function () {
-        console.log({name})
-        onEpisodeClicked(name);
+        onEpisodeClicked(episode);
 
     }
 
     return (
         <li onClick = {handleClick} className = "clickable-li">
-            {name}
-            {/* Season: {episode.season}
-            Episode Number: {episode.episodeNumber}
-            Rating: {episode.rating}
-            Plot: {episode.description} */}
+            {episode.name}
+ 
         </li>
     )
 }

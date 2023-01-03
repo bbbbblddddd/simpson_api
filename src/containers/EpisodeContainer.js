@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import EpisodeList from '../components/EpisodeList';
 import EpisodeDetail from '../components/EpisodeDetail';
-import EpisodeSelector from '../components/EpisodeSelector';
-import Episode from '../components/Episode';
 
 const EpisodeContainer = () => {
     const [episodes, setEpisodes] = useState ([]);
@@ -23,15 +21,12 @@ const onEpisodeClicked = function(episode) {
     setSelectedEpisode(episode);        
 }
 
-// const onEpisodeSelected = function (episode) {
-//     setEpisodeSelected(episode)
-// }
 
 
     return (
         <div className = "main-container">
+             {selectedEpisode ? <EpisodeDetail episode={selectedEpisode}/> : null}
             <EpisodeList episodes={episodes} onEpisodeClicked = {onEpisodeClicked}/>
-            {selectedEpisode ? <EpisodeDetail episode={selectedEpisode}/> : null}
         </div>
     )
 

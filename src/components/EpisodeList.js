@@ -1,17 +1,18 @@
 import React from 'react';
 import Episode from './Episode'
 
-const EpisodeList = ({episodes, onEpisodeClicked}) => {
-    const episodeItems = episodes.map((episode, index) => {
-        return <Episode name={episode.name} onEpisodeClicked = {onEpisodeClicked}/>
+const EpisodeList = ({ episodes, onEpisodeClicked }) => {
+    const episodeItems = episodes.map((episode) => {
+        return <Episode episode={episode} onEpisodeClicked={onEpisodeClicked} key={episode.id} />
     })
 
 
-return (
+    return (
 
-    <ul>
-        {episodeItems}
-    </ul>
-)}
+        <ul>
+            {episodeItems}
+        </ul>
+    )
+}
 
 export default EpisodeList
